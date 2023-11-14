@@ -84,10 +84,8 @@ class _HomeScreenState extends State<HomeScreen> {
                       onPressed: () {},
                     ),
                   ),
-                ],
-              )
-            ],
-          ),
+                ],)
+            ],),
         ),
         const SizedBox(
           height: 25,
@@ -173,10 +171,14 @@ class _HomeScreenState extends State<HomeScreen> {
                     width: 25,
                   ),
                   buildExpensesCards(
-                      Icons.camera_alt_outlined, "New camera", "1300.00"),
+                      Icons.camera_alt_outlined, "New camera", "800.00"),
+                  const SizedBox(
+                    width: 25,
+                  ),
+                  buildExpensesCards(
+                      Icons.call, "Phone bill", "40.00"),
                 ],
-              )
-            ],
+              )],
           ),
         )
       ]),
@@ -197,7 +199,7 @@ class _HomeScreenState extends State<HomeScreen> {
           child: Icon(
             icon,
             size: 75.0,
-            color: Color.fromARGB(255, 145, 145, 145),
+            color: const Color.fromARGB(255, 145, 145, 145),
           ),
         ),
         const SizedBox(
@@ -212,17 +214,15 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
           children: [
             TextSpan(
-              text: "\n\$" + price,
+              text: "\n\$$price",
               style: const TextStyle(
                 color: Colors.black,
                 fontSize: 16,
                 fontWeight: FontWeight.bold,
               ),
-            ),
-          ],
+            ),],
         )),
-      ],
-    );
+      ],);
   }
 
   Column buildChart(String title, Color color, double width) {
